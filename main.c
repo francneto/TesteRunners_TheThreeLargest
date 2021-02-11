@@ -13,42 +13,60 @@ int main(int argc, char** argv) {
 	fprintf(stderr, "\n");
 	Q_elem_a = argc - 1;
 
-	// Não modifique o código acima
+	// NÃ£o modifique o cÃ³digo acima
 
-	// Encontre os três maiores elementos do vetor de 
-	// float a[]. Os três valores devem ser retornados
+	// Encontre os trÃªs maiores elementos do vetor de 
+	// float a[]. Os trÃªs valores devem ser retornados
 	// segundo as regras explicadas adiante.
-	// Ao desenvolver seu algoritmo, não é permitido
+	// Ao desenvolver seu algoritmo, nÃ£o Ã© permitido
 	// modificar ou duplicar o vetor a[].
-	// Também não é permitido usar um algoritmo de 
-	// ordenação para compor o seu algoritmo.
-	// Crie suas variáveis aqui
+	// TambÃ©m nÃ£o Ã© permitido usar um algoritmo de 
+	// ordenaÃ§Ã£o para compor o seu algoritmo.
+	// Crie suas variÃ¡veis aqui
 	
+	int i_maiores[3] = { 0, 0, 0 };
+	int j;
 
-
-
-	// Crie o corpo do seu código aqui
+	// Crie o corpo do seu cÃ³digo aqui
 	
-	
+	for (j = 0; j < 3; j++) {
+		for (i = 0; i < Q_elem_a; i++) {
+			if (j == 2) {
+				if (i == i_maiores[1] || i == i_maiores[0]) {
+					continue;
+				}
+			}
+			else if (j == 1) {
+				if (i == i_maiores[0]) {
+					continue;
+				}
+			}
+			else {
+				// Para j == 0 nÃ£o hÃ¡ maiores
+			}
+			if (a[i] > a[i_maiores[j]]) {
+				i_maiores[j] = i;
+			}
+		}
+	}
 
 
-	// A saída deve ser para a stdout e deve ser na forma de 
+	// A saÃ­da deve ser para a stdout e deve ser na forma de 
 	// uma string contendo os 3 maiores elementos em ordem
-	// decrescente, serados por um espaço entre eles.
-	// O último caractere da string deve ser o
+	// decrescente, serados por um espaÃ§o entre eles.
+	// O Ãºltimo caractere da string deve ser o
 	// pula linha '\n'. 
 	// Exemplo: "<maior>< ><2o_maior>< ><3o_maior><\n>"
 	// <  > servem para representar os componentes da string
-	// e não devem ser impressos.
+	// e nÃ£o devem ser impressos.
 	// Os valores devem ser arredondados com 2 casas decimais.
-	// Crie a saída para o programa de testes automático aqui
+	// Crie a saÃ­da para o programa de testes automÃ¡tico aqui
 
+	fprintf(stderr, "Os 3 maiores elementos em ordem descrescente:\n");
+	printf("%.2f %.2f %.2f\n", a[i_maiores[0]], a[i_maiores[1]], a[i_maiores[2]]);
 
+	// NÃ£o modifique o cÃ³digo abaixo
 
-
-	// Não modifique o código abaixo
-
-	
 	return 0;
 }
 
